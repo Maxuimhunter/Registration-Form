@@ -1,0 +1,250 @@
+/* General Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    /* recently added */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+header {
+    text-align: center;
+    padding: -5px;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 20px;
+}
+
+.menu-item {
+    border: 1px solid black;
+    padding: 15px;
+    background-color: #f0f0f0;
+    margin: 20px;
+    position: relative;
+    width: 50%;
+    min-width: 300px;
+    box-sizing: border-box;
+    padding-bottom: 30px;
+}
+
+/*For the viewing.html*/
+.menu-item2{
+    border: 1px solid black;
+    padding: 15px;
+    background-color: #f0f0f0;
+    margin: 20px;
+    position: relative;
+    width: 100%;
+    min-width: 300px;
+    box-sizing: border-box;
+    padding-bottom: 30px;
+}
+
+.title {
+    top: 10px;
+    right: 10px;
+    background-color: #ffcccc;
+    padding: 5px;
+    border: 1px solid black;
+    align-self: center;
+    text-align: center;
+}
+
+/* Responsive Design */
+
+/* Tablet View */
+@media (max-width: 991px) and (min-width: 768px) {
+    .menu-item {
+        width: 45%;
+    }
+    /*For the viewing.html*/
+    .menu-item2{
+        width: 45%;
+    }
+
+    .menu-item:nth-child(3) {
+        width: 100%;
+    }
+
+    /*For the viewing.html*/
+    .menu-item2:nth-child(3){
+        width: 100%;
+    }
+}
+
+/* Mobile View */
+@media (max-width: 767px) {
+    .menu-item {
+        width: 100%;
+    }
+    /*For the viewing.html*/
+}
+
+.form-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    margin: 0 auto; /* Center the form container */
+}
+
+ form {
+    width: 500px;
+    margin: 0 auto;
+} 
+
+h1 {
+    text-align: center;
+    margin-bottom: 1px;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+.form-group {
+    flex: 1;
+    margin: 0 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.form-group input[type="radio"] {
+    width: auto;
+}
+
+button {
+    width: 40%;
+    padding: 10px;
+    background-color: #5cb85c;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    float: right;
+}
+
+button:hover {
+    background-color: #4cae4c;
+    float: right;
+}
+
+/* Recently added */
+
+/* For the box at the bottom right */
+.bottom {
+    top: 10px;
+    right: 10px;
+    background-color: #ffcccc;
+    padding: 5px;
+    border: 1px solid black;
+    align-self: center;
+    text-align: center;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.bottom11 {
+    top: 10px;
+    right: 10px;
+    background-color: #f0b9b9df;
+    padding: 5px;
+    border: 1px solid black;
+    align-self: center;
+    text-align: center;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.veiw {
+    top: 5px;
+    right: 5px;
+    background-color: #f0b9b9df;
+    padding: 5px;
+    border: 1px solid black;
+    align-self: center;
+    text-align: center;
+}
+
+/* Style the table */
+table {
+    width: 100%;
+    margin: 20px 0;
+    border: 1px solid #ddd; /* Outer table border */
+}
+
+th, td {
+    padding: 12px; /* Padding inside table cells */
+    text-align: left; /* Align text to the left */
+    border: 1px solid #ddd; /* Inner table borders */
+}
+
+th {
+    background-color: #e88888df; /* Header background color */
+    color: #fff; /* Header text color */
+}
+
+/* Style the table rows on hover */
+tr:hover {
+    background-color: #f1f1f1; /* Row background color on hover */
+}
+
+/* Style the form */
+form {
+    margin-top: 20px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    width: calc(100% - 22px); /* Full width minus padding and border */
+    border: 1px solid #ddd;
+    border-radius: 4px; /* Rounded corners */
+}
+
+input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #007bff; /* Button background color */
+    color: #fff; /* Button text color */
+    border: none;
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3; /* Darker background color on hover */
+}
+
+
+/* Latests added */
+a{
+    text-decoration: none;
+}

@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+
+{% block head %}
+   <title>Task Master</title>
+{% endblock %}
+
+{% block body %} 
+<section class="menu-item">
+    <div id="content">
+        <form method="POST">
+            <div class="title">Reg Form</div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="first-name">First Name:</label><br>
+                    <input type="text" id="first-name" name="first-name" placeholder="First Name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="second-name">Second Name:</label><br>
+                    <input type="text" id="second-name" name="second-name" placeholder="Second Name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="family-name">Family Name:</label><br>
+                    <input type="text" id="family-name" name="family-name" placeholder="Family Name" required>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="dob">Date of Birth:</label><br>
+                    <input type="date" id="dob" name="dob" placeholder="Date of Birth" onchange="calculateAge()" required>
+                </div>
+                <div class="form-group">
+                    <label for="age">Age:</label><br>
+                    <input type="number" id="age" name="age" placeholder="Age" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="gender">Gender:</label><br>
+                    <select id="gender" name="gender" aria-placeholder="Select Gender" required>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Unknown">Unknown</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="date-tested">Date HIV Tested:</label><br>
+                    <input type="date" id="date-tested" name="date-tested" required>
+                </div>
+                <div class="form-group">
+                    <label>HIV Status:</label><br>
+                    <div class="bottom11">
+                        <label for="positive">Positive: <input type="radio" id="positive" name="hiv-status" value="Positive"></label>
+                    </div>
+                    <div class="bottom11">
+                        <label for="negative">Negative: <input type="radio" id="negative" name="hiv-status" value="Negative"></label>
+                    </div>
+                    <div class="bottom11">
+                        <label for="unknown">Unknown: <input type="radio" id="unknown" name="hiv-status" value="Unknown"></label>
+                    </div>  
+                </div>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+        <br>
+    </div>
+</section>
+<section class="menu-item">
+    <div class="veiw">Data</div>
+    <div class="tasks">
+                <table>
+                    <tr>
+                        <th>Name(s)</th>
+                        <th>Date of Birth</th>
+                        <th>Age</th>
+                        <th>Gender</th>
+                        <th>Date Tested</th>
+                        <th>Result</th>
+                        <th>Actions</th>
+                    </tr>
+                    {% for task in tasks %}
+                        <tr>
+                            <td>{{ task.first_name }} <br> {{ task.second_name }} <br> {{ task.family_name }}</td>
+                            <td>{{ task.dob.strftime('%Y-%m-%d') }}</td>
+                            <td>{{ task.age }}</td>
+                            <td>{{ task.gender }}</td>
+                            <td>{{ task.date_tested.strftime('%Y-%m-%d') }}</td>
+                            <td>{{ task.hiv_status }}</td>
+                            <td>
+                                <a href="{{ url_for('viewing', id=task.id) }}">Update</a>
+                                <br>
+                                <a href="{{ url_for('delete', id=task.id) }}">Delete</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </table>
+  </div> 
+</section>
+<script src="{{ url_for('static', filename='JS/RegForm.js') }}"></script>
+{% endblock %}
